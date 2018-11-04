@@ -44,19 +44,24 @@ var app = {
         console.log('Received Event: ' + id);
     },
     
-    onSuccess(position) {
+    onSuccess: function(position) {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
         
-        alert(latitude+' '+longitude);
+        alert('aaaa');
     
         var latLong = new google.maps.LatLng(latitude, longitude);
-        var mapOptions = {center: latLong, zoom:13};//mapTypeId:google.maps.MyTypeId.ROADMAP};
-
+        var mapOptions = {center: latLong, zoom:13,mapTypeId:google.maps.MyTypeId.ROADMAP};
         var map = new google.maps.Map(document.getElementById("map"),mapOptions);
+        
+        /*map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: latitude, lng: longitude},
+            zoom: 8
+        });*/
+        
     },
 
-    onError(error) {
+    onError: function(error) {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }

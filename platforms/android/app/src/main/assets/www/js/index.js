@@ -28,6 +28,9 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+        alert(1);
+        
+        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },
 
     // Update DOM on a Received Event
@@ -40,6 +43,23 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    
+    onSuccess(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        
+        alert(latitude+' '+longitude);
+    
+        var latLong = new google.maps.LatLng(latitude, longitude);
+        var mapOptions = {center: latLong, zoom:13};//mapTypeId:google.maps.MyTypeId.ROADMAP};
+
+        var map = new google.maps.Map(document.getElementById("map"),mapOptions);
+    },
+
+    onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
     }
 };
 
