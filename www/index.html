@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>MAPA E TEMPO</title>
     </head>
     <body>
-        <h1>v2</h1>
+    
+        <div class="header w3-center">
+            <!-- titulo e outros basicos -->
+            <label id="ceu">a</label><br>
+            <label id="tem">s</label><br>
+            <label id="hum">d</label><br>
+            <label id="ven">f</label><br>
+        </div>
         <div id="map"></div>
         <!-- maps AIzaSyDR6nLzo0yPlAWYWJBd35hDgFDFynDtmy4 -->
         <!-- weather 5c9e007cce182013a0b10daa27653375 -->
@@ -17,4 +26,22 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR6nLzo0yPlAWYWJBd35hDgFDFynDtmy4"></script>
         
     </body>
+    
+    <!-- api.openweathermap.org/data/2.5/weather?lat=-23.5191627&lon=-47.1257023&apikey=5c9e007cce182013a0b10daa27653375 -->
 </html>
+
+
+<!--
+{
+"coord":{"lon":-47.13,"lat":-23.52},
+"weather":[{"id":701,"main":"Mist","description":"mist","icon":"50n"}],
+"base":"stations",
+"main":{"temp":292.65,"pressure":1018,"humidity":88,"temp_min":291.15,"temp_max":295.15},
+"visibility":3000,
+"wind":{"speed":4.6,"deg":150},
+"clouds":{"all":90},
+"dt":1541541600,
+"sys":{"type":1,"id":4575,"message":0.1207,"country":"BR","sunrise":1541492346,"sunset":1541539531},
+"id":3448300,"name":"Sao Roque","cod":200}
+
+-->
